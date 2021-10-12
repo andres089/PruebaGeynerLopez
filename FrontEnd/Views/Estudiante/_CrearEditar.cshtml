@@ -1,0 +1,83 @@
+﻿@model FrontEnd.Models.Estudiante
+<form>
+    <div class="form-horizontal form-label-left">
+        <div class="row">
+            @Html.HiddenFor(model => model.IdEstudiante)
+            <div class="separacion_inferior col-md-4 col-sm-12 col-xs-12">
+                <label class="col-md-8 col-sm-6 col-xs-12" for="nombre">
+                    Nombre <span>*</span>
+                </label>
+                @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control col-md-7 col-xs-12  required", placeholder = "Digite el nombre", @maxlength = 80, onkeypress = "return EsAlfaNumericoEspacio(this);" })
+            </div>
+
+            <div class="separacion_inferior col-md-4 col-sm-12 col-xs-12">
+                <label class="col-md-8 col-sm-6 col-xs-12" for="nombre">
+                    Identificación<span>*</span>
+                </label>
+                @Html.TextBoxFor(model => model.Documento, new { @class = "form-control col-md-7 col-xs-12  required", placeholder = "Digite la identificación", @maxlength = 20, onkeypress = "return EsAlfaNumericoEspacio(this);" })
+            </div>
+
+            <div class="separacion_inferior col-md-4 col-sm-12 col-xs-12">
+                <label class="col-md-8 col-sm-6 col-xs-12" for="nombre">
+                    Teléfono<span>*</span>
+                </label>
+                @Html.TextBoxFor(model => model.Telefono, new { @class = "form-control col-md-7 col-xs-12 required", placeholder = "Digite el teléfono", @maxlength = 50, onkeypress = "return EsAlfaNumericoEspacio(this);" })
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12" style="height:300px; width:auto; overflow-y:auto;">
+                <div class="checkbox treeview">
+                    <br />
+                    <b>Direcciones</b>
+                    <ul>
+                        @foreach (var item in Model.Direcciones)
+                        {
+                        <li>
+                            @if (Model.DireccionesEstudiantes.Count(x => x.IdDireccion == item.IdDireccion) > 0)
+                            {
+                                <input class="nivel3" name="chkMenu" type="checkbox" value="@item.IdDireccion" checked/>@item.Direccion 
+                            }
+                            else
+                            {
+                                <input class="nivel3" name="chkMenu" type="checkbox" value="@item.IdDireccion" />@item.Direccion
+                            }
+
+                            <br />
+
+                        </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-12" style="height:300px; width:auto; overflow-y:auto;">
+                <div class="checkbox treeview">
+                    <br />
+                    <b>Cursos</b>
+                    <ul>
+                        @foreach (var item in Model.Cursos)
+                        {
+                        <li>
+                            @if (Model.CursosEstudiantes.Count(x => x.IdCurso == item.IdCurso) > 0)
+                            {
+                                <input class="nivel3" name="chkMenu" type="checkbox" value="@item.IdCurso" checked />@item.Nombre
+                            }
+                            else
+                            {
+                                <input class="nivel3" name="chkMenu" type="checkbox" value="@item.IdCurso" />@item.Nombre
+                            }
+
+                            <br />
+
+                        </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+</form>
+
+<script>
+    Inicializar();
+</script>

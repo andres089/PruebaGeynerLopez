@@ -1,0 +1,55 @@
+﻿@font-face {
+    font-family: 'lucida_consola';
+    src: url('font/lucida_consola.woff') format('woff');
+}
+.consolas {
+    font-family: lucida_consola;
+    color: black;
+    background-color: #ffffff;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.tablaimprimir {
+    font-size: 14px;
+}
+
+.detallecompra {
+    font-size: 13px;
+}
+.alineacionizquierda {
+    text-align: left;
+}
+.alineacioncentro {
+    text-align: center;
+}
+.alineacionderecha {
+    text-align: right;
+}
+.encabezadofactura {
+    font-size:15px; 
+    font-weight:bold;
+}
+.bold {
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'codigobarras';
+    src: url('font/code39-webfont.woff2') format('woff2'), url('font/code39-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.BarCode {
+    font-family: 'codigobarras';
+    font-size: 37px;
+    text-align: center;
+    color: black;
+    padding-right: 10px !important;
+    padding-left: 0px !important;
+}
+
+.tamanio_ticket {
+    width:50px !important;
+}

@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prueba Tecnica</title>
+    <!-- Font Awesome -->
+    <link href="~/Vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="~/Content/custom.css" rel="stylesheet" />
+    <link href="~/Content/botones.css" rel="stylesheet" />
+    <link href="~/Content/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Content/select2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/loader.css">
+    <link href="~/Content/sweetalert2.css" rel="stylesheet" />
+    <link href="~/Content/text-align.css" rel="stylesheet" />
+</head>
+<body class="nav-md" id="bodyGeneral">
+    <div id="date_complete" style="display:none;">
+    </div>
+    <div class="loader-wrapper" id="loader-1">
+        <div style="text-align:center;position:relative;">
+            <div class="loader loader-5"></div>
+        </div>
+    </div>
+    <hidden id="control" value="0"></hidden>    
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="@Url.Action("Index","Home")" class="site_title">
+                            <h3>Prueba Tecnica</h3>
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <br />
+                    <!-- sidebar menu <span class="fa fa-chevron-down"></span> -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <ul class="nav side-menu">
+                                <li><a href="@Url.Action("Index", "Cursos")"><i class="fa fa-building-o"></i> Cursos </a></li>
+                                <li><a href="@Url.Action("Index", "Direcciones")"><i class="fa fa-bus"></i> Direcciones </a></li>
+                                <li><a href="@Url.Action("Index", "Estudiante")"><i class="fa fa-user"></i> Estudiantes </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /sidebar menu -->
+
+                </div>
+            </div>
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="alert alert-success alert-dismissible fade in alert-notification col-md-6 col-sm-6 col-xs-12 col-md-offset-6 col-sm-offset-6" role="alert">
+                            <button type="button" class="close close-alert" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                            <h4></h4> <p></p>
+                        </div>
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>@ViewBag.Title <small>@ViewBag.SubTitle</small></h2>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="x_content">
+                                <div class="dashboard-widget-content">
+                                    @RenderBody()
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- top tiles -->
+            </div>
+            <!-- /page content -->
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+                    @string.Concat("Prueba Tecnica")
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+        </div>
+    </div>
+
+    <div id="modalCRUD" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header titulo_modal">
+                    <button type="button" class="close" style="color:#212121 !important;" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" style="color:#212121 !important;"></h4>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="msjErrorModal">
+                    <div id="div_message_error" class="alert alert-danger" role="alert" style="display:none;">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Error:</span>
+                        <label id="lbl_message_error">Ocurrio un error procesando la solicitud</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="boton_aceptar" data-url="" data-metod="" data-function="" id="btnSaveGeneric"><i class="fa fa-save"></i> Guardar</button>
+                    <button type="button" style="display:none;" class="boton_aceptar" data-url="" data-metod="" data-function="" id="btnSaveCustomizable"><i class="fa fa-save"></i> Guardar</button>
+                    <button type="button" class="boton_cancelar" data-url="" data-metod="" data-function="" id="btnCancelGeneric"><i class="fa fa-times"></i> Cancelar</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- jQuery -->
+    <script src="~/Vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/Vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+    <script>
+        urlBase = "";        
+    </script>
+
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+    <script src="~/Scripts/custom.js"></script>
+    <script src="~/Scripts/moment.min.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
+    <script src="~/Scripts/General.js"></script>
+    <script src="~/Scripts/select2.min.js"></script>
+    <script src="~/Scripts/core_for_sweetAlert2.js"></script>
+    <script src="~/Scripts/sweetalert2.min.js"></script>
+    <script src="~/Vendors/jQuery-Mask-Plugin-master/dist/jquery.mask.min.js"></script>    
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+
