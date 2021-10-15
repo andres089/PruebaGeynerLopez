@@ -42,9 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\INegocioBase.cs" />
-    <Compile Include="INegocioDirecciones.cs" />
-    <Compile Include="INegocioEstudiante.cs" />
-    <Compile Include="INegocioCursos.cs" />
+    <Compile Include="INegocioProducto.cs" />
+    <Compile Include="INegocioFactura.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

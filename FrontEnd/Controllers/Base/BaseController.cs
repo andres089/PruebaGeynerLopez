@@ -22,10 +22,9 @@ namespace FrontEnd.Controllers.Base
                 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", ConfigurationManager.AppSettings["Token"]);
             }
         }
-        internal static async Task<T> GetAsync<T>(string path) where T : class
+        internal static async Task<T> GetAsync<T>(string path, string token) where T : class
         {
             Initializer();
-
             HttpResponseMessage response = await httpClient.GetAsync(path);
             if (response.IsSuccessStatusCode)
             {
@@ -35,7 +34,7 @@ namespace FrontEnd.Controllers.Base
             return null;
         }
 
-        internal static async Task<RespuestaViewModel> PostAsync<T, P>(string path, T element) where T : class where P : class
+        internal static async Task<RespuestaViewModel> PostAsync<T, P>(string path, T element, string token) where T : class where P : class
         {
             Initializer();
             HttpResponseMessage response = await httpClient.PostAsJsonAsync(path, element);

@@ -29,18 +29,16 @@ namespace Api.App_Start
         private static void InitializeContainer(Container container)
         {
             #region Negocio
-            container.Register<INegocioCursos, NegocioCursos>(Lifestyle.Scoped);
-            container.Register<INegocioDirecciones, NegocioDirecciones>(Lifestyle.Scoped);
-            container.Register<INegocioEstudiante, NegocioEstudiante>(Lifestyle.Scoped);      
+            container.Register<INegocioFactura, NegocioFactura>(Lifestyle.Scoped);
+            container.Register<INegocioProducto, NegocioProducto>(Lifestyle.Scoped);      
 
             #endregion
 
             #region Datos
 
             container.Register(typeof(IRepositorioBase<>), typeof(RepositorioBase<>)); 
-            container.Register<IRepositorioDirecciones, RepositorioDirecciones>(Lifestyle.Scoped);
-            container.Register<IRepositorioEstudiante, RepositorioEstudiante>(Lifestyle.Scoped);
-            container.Register<IRepositorioCursos, RepositorioCursos>(Lifestyle.Scoped);
+            container.Register<IRepositorioFactura, RepositorioFactura>(Lifestyle.Scoped);
+            container.Register<IRepositorioProducto, RepositorioProducto>(Lifestyle.Scoped);
 
             #endregion
         }

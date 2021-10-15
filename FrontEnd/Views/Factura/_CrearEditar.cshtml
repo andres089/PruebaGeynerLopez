@@ -1,0 +1,71 @@
+﻿@model FrontEnd.Models.Factura
+<form>
+    <div class="form-horizontal form-label-left">
+        <div class="row">
+            @Html.HiddenFor(model => model.IdFactura)
+            @Html.HiddenFor(model => model.Iva)
+            <div class="separacion_inferior col-md-4 col-sm-12 col-xs-12">
+                <label class="col-md-8 col-sm-6 col-xs-12" for="nombre">
+                    Nombre<span>*</span>
+                </label>
+                @Html.TextBoxFor(model => model.NombreCliente, new { @class = "form-control col-md-7 col-xs-12  required", placeholder = "Digite el nombre", @maxlength = 80, onkeypress = "return EsAlfaNumericoEspacio(this);" })
+            </div>
+
+            <div class="separacion_inferior col-md-4 col-sm-12 col-xs-12">
+                <label class="col-md-8 col-sm-6 col-xs-12" for="nombre">
+                    Identificación<span>*</span>
+                </label>
+                @Html.TextBoxFor(model => model.DocumentoCliente, new { @class = "form-control col-md-7 col-xs-12  required", placeholder = "Digite la identificación", @maxlength = 20, onkeypress = "return EsAlfaNumericoEspacio(this);" })
+            </div>
+
+            <div class="separacion_inferior col-md-4 col-sm-12 col-xs-12">
+                <label class="col-md-8 col-sm-6 col-xs-12" for="nombre">
+                    Medio de pago<span>*</span>
+                </label>
+                @Html.DropDownListFor(model => model.TipoPago, new SelectList(Model.medioPagos, "IdMedioPago", "Descripcion"), new { @class = "form-control col-md-7 col-xs-12 required" })
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="separacion_inferior col-md-4 col-sm-12 col-xs-12">
+                <label class="col-md-8 col-sm-6 col-xs-12" for="nombre">
+                    Descuento<span>*</span>
+                </label>
+                @Html.TextBoxFor(model => model.Descuento, new { @class = "form-control col-md-7 col-xs-12  required", placeholder = "Digite el nombre", @maxlength = 80, onkeypress = "return EsAlfaNumericoEspacio(this);" })
+            </div>
+
+            <div class="separacion_inferior col-md-4 col-sm-12 col-xs-12">
+                <label class="col-md-8 col-sm-6 col-xs-12" for="nombre">
+                    Total descuento<span>*</span>
+                </label>
+                @Html.TextBoxFor(model => model.TotalDescuento, new { @class = "form-control col-md-7 col-xs-12  required", placeholder = "Digite la identificación", @maxlength = 20, onkeypress = "return EsAlfaNumericoEspacio(this);", @readonly = "Readonly" })
+            </div>
+
+            <div class="separacion_inferior col-md-4 col-sm-12 col-xs-12">
+                <label class="col-md-8 col-sm-6 col-xs-12" for="nombre">
+                    Total Impuesto<span>*</span>
+                </label>
+                @Html.TextBoxFor(model => model.TotalImpuesto, new { @class = "form-control col-md-7 col-xs-12  required", placeholder = "Digite la identificación", @maxlength = 20, onkeypress = "return EsAlfaNumericoEspacio(this);", @readonly = "Readonly" })
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="separacion_inferior col-md-4 col-sm-12 col-xs-12">
+                <label class="col-md-8 col-sm-6 col-xs-12" for="nombre">
+                    Subtotal<span>*</span>
+                </label>
+                @Html.TextBoxFor(model => model.Subtotal, new { @class = "form-control col-md-7 col-xs-12  required", placeholder = "Digite la identificación", @maxlength = 20, onkeypress = "return EsAlfaNumericoEspacio(this);", @readonly = "Readonly" })
+            </div>
+
+            <div class="separacion_inferior col-md-4 col-sm-12 col-xs-12">
+                <label class="col-md-8 col-sm-6 col-xs-12" for="nombre">
+                    Total<span>*</span>
+                </label>
+                @Html.TextBoxFor(model => model.Total, new { @class = "form-control col-md-7 col-xs-12  required", placeholder = "Digite la identificación", @maxlength = 20, onkeypress = "return EsAlfaNumericoEspacio(this);", @readonly = "Readonly" })
+            </div>
+        </div>
+
+
+</form>

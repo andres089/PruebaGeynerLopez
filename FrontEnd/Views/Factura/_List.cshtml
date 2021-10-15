@@ -1,0 +1,41 @@
+﻿@model IEnumerable<FrontEnd.Models.Factura>
+
+<table id="datatable-responsive" class="table table-striped table-bordered nowrap dataTable no-footer" cellspacing="0" width="100%">
+
+    <thead>
+        <tr>
+            <th>Codigo Factura</th>
+            <th>Nombre Cliente</th>  
+            <th>Fecha</th>
+            <th>Total</th>
+            <th style="width:10px"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+        <tr>
+            <td>
+                @item.NumeroFactura
+            </td>
+            <td>
+                @item.NombreCliente
+            </td>
+            <td>
+                @item.Fecha
+            </td>
+            <td>
+                @item.Total
+            </td>
+            <td style="text-align:center; width:10px">
+                <a class="lnkEdit" data-id="@item.IdFactura" href="javascript:void(0)"><b class="fa fa-pencil-square"></b></a>
+            </td>
+        </tr>
+            }
+        }
+    </tbody>
+</table>
+
+

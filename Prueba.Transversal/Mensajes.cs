@@ -6,6 +6,6 @@
         public const string MensajeSinInformacion = "No fue posible obtener la información.";
         public const string MensajeIncidencia = "Ocurrio una incidencia y no fue posible guardar la información.";
         public const string MensajeGuardadoCorrecto = "Información guardada correctamente.";
-        public const string MensajeEstudianteExiste = "Ya existe un estudiante con el nombre y número de documento ingresados.";
+        public const string MensajeFacturaExiste = "Ya existe un codigo de factura ingresado.";
     }
 }

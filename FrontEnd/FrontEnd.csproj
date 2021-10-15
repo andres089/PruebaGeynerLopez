@@ -138,13 +138,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Base\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\CursosController.cs" />
-    <Compile Include="Controllers\DireccionesController .cs" />
-    <Compile Include="Controllers\EstudianteController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
+    <Compile Include="Controllers\FacturaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Estudiante.cs" />
+    <Compile Include="Models\Factura.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\RespuestaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -172,13 +171,13 @@
     <Content Include="Scripts\core_for_sweetAlert2.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\daterangepicker.js" />
-    <Content Include="Scripts\Estudiante\Empresa.js" />
+    <Content Include="Scripts\Producto\Producto.js" />
+    <Content Include="Scripts\Factura\Factura.js" />
     <Content Include="Scripts\General.js" />
     <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\select2.min.js" />
     <Content Include="Scripts\sweetalert2.min.js" />
-    <Content Include="Scripts\Cursos\Cursos.js" />
     <Content Include="Vendors\bootstrap-daterangepicker\daterangepicker.css" />
     <Content Include="Vendors\bootstrap-daterangepicker\daterangepicker.js" />
     <Content Include="Vendors\bootstrap\dist\css\bootstrap.min.css" />
@@ -399,8 +398,8 @@
     <Content Include="Content\font\consolas.woff" />
     <Content Include="Content\font\lucida_consola.woff" />
     <None Include="packages.config" />
-    <Content Include="Views\Cursos\Index.cshtml" />
-    <Content Include="Views\Cursos\_List.cshtml" />
+    <Content Include="Views\Producto\Index.cshtml" />
+    <Content Include="Views\Producto\_List.cshtml" />
     <Content Include="Vendors\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="Vendors\font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="Vendors\font-awesome\fonts\fontawesome-webfont.woff" />
@@ -451,13 +450,10 @@
     <Content Include="Vendors\jQuery-Mask-Plugin-master\LICENSE" />
     <Content Include="Vendors\jQuery-Mask-Plugin-master\package.json" />
     <Content Include="Vendors\jQuery-Mask-Plugin-master\README.md" />
-    <Content Include="Views\Cursos\_CrearEditar.cshtml" />
-    <Content Include="Views\Estudiante\_CrearEditar.cshtml" />
-    <Content Include="Views\Estudiante\_List.cshtml" />
-    <Content Include="Views\Estudiante\Index.cshtml" />
-    <Content Include="Views\Direcciones\Index.cshtml" />
-    <Content Include="Views\Direcciones\_List.cshtml" />
-    <Content Include="Views\Direcciones\_CrearEditar.cshtml" />
+    <Content Include="Views\Producto\_CrearEditar.cshtml" />
+    <Content Include="Views\Factura\_CrearEditar.cshtml" />
+    <Content Include="Views\Factura\_List.cshtml" />
+    <Content Include="Views\Factura\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Prueba.Negocio.Entidades\Prueba.Negocio.Entidades.csproj">

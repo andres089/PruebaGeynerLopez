@@ -1,0 +1,15 @@
+﻿@model Prueba.Negocio.Entidades.Producto
+<form>
+    <div class="form-horizontal form-label-left">
+        <div class="row">
+            @Html.HiddenFor(model => model.IdProducto)
+            <div class="separacion_inferior col-md-4 col-sm-12 col-xs-12">
+                <label class="col-md-8 col-sm-6 col-xs-12" for="nombre">
+                    Nombre <span>*</span>
+                </label>
+                @Html.TextBoxFor(model => model.NombreProducto, new { @class = "form-control col-md-7 col-xs-12  required", placeholder = "Digite el nombre", @maxlength = 80, onkeypress = "return EsAlfaNumericoEspacio(this);" })
+            </div>           
+        </div>
+
+    </div>
+</form>

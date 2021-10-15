@@ -60,9 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\IRepositorioBase.cs" />
-    <Compile Include="IRepositorioCursos.cs" />
-    <Compile Include="IRepositorioEstudiante.cs" />
-    <Compile Include="IRepositorioDirecciones.cs" />
+    <Compile Include="IRepositorioProducto.cs" />
+    <Compile Include="IRepositorioFactura.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -154,9 +154,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Base\BaseController.cs" />
     <Compile Include="Controllers\TokenController.cs" />
-    <Compile Include="Controllers\DireccionesController.cs" />
-    <Compile Include="Controllers\CursosController.cs" />
-    <Compile Include="Controllers\EstudianteController.cs" />
+    <Compile Include="Controllers\ProductosController.cs" />
+    <Compile Include="Controllers\FacturaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
